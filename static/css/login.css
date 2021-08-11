@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin:0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+}
+
+body{
+    background-image: url(../img/bklogin.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.card{
+    text-align: center;
+    background-color: #ffffff80;
+    padding: 55px;
+    border-radius: 2%;
+    box-shadow: 5px 5px 2px 0px #00000070;
+
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0C1362;
+    font-size: 2.4rem;
+}
+
+.label-float input{
+    width: 100%;
+    padding: 5px 5px;
+    display: inline-block;
+    border: 0;
+    border-bottom: 2px solid #0C1362;
+    background-color: transparent;
+    outline: none;
+    min-width: 180px;
+    font-size: 16px;
+    transition: all .3s ease-out;
+    border-radius: 0;
+
+}
+.label-float{
+    position: relative;
+    padding-top: 13px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.label-float input:focus{
+    border-bottom: 2px #4038a0;
+
+}
+
+.label-float label{
+    color: #0C1362 ;
+    pointer-events: none;
+    position: absolute;
+    top:0;
+    left: 0;
+    transition: all .3s ease-out;
+    
+}
+
+.label-float input:focus + label{
+    font-size: 13px;
+    margin-top: 0;
+    color: #4038a0;
+}
+
+button{
+    width: 50%;
+    background-color: #4038a0;
+    border-bottom:#0C1362;
+    color: #ffffff;
+    padding: 7px;
+    font-weight: bold;
+    font-size: 12pt;
+    margin-top: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    
+}
+
+button:hover{
+    width: 60%;
+    background-color: #4038a0;
+    color:  #ffffff;
+    transition: all .2s ease-out;
+}
+
+
+
+.justify-center{
+    display: flex;
+    justify-content: center;
+}
+
+hr{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 100%;
+   
+}
+
+p{
+    color:#0C1362;
+    font-weight: 600;
+    font-size: 16pt;
+    text-align: center;
+}

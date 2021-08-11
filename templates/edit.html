@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Catalogo | Edit</title>
+</head>
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body{
+        background-image: url(../static/img/bkedit.gif);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    body div.container.mt-5{
+        background: rgba(44, 44, 44, 0.700);
+        color: azure;
+        border-radius: 2rem;
+        padding: 3rem;
+    }
+
+    label.form-label{
+        font-size: 1.3rem;
+    }
+
+    button.btn.btn-primary{
+    padding: .5rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    background-color: #ffffff;
+    color: black;
+    border: solid 1.2px rgb(0, 0, 0);
+    border-radius: .5rem;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    }
+
+    button.btn.btn-primary:hover{
+    background-color: #80fd84; 
+    color: rgb(0, 0, 0);
+    }
+
+    button.btn.btn-primary-cancel{
+    padding: .5rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    background-color: #ffffff;
+    color: black;
+    border: solid 1.2px rgb(0, 0, 0);
+    border-radius: .5rem;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    }
+
+    button.btn.btn-primary-cancel:hover{
+    background-color: #fd8080; 
+    color: rgb(0, 0, 0);
+    }
+    
+
+</style>
+<body>
+
+    <div class="container mt-5">
+
+        <div class="row mb-5">
+            <div class="col d-flex justify-content-center">
+                <h1>Edite o conteúdo do Card.</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <form action="/edit/{{portifolio.id}}" method="POST">
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="nome" name='nome' value='{{portifolio.nome}}'>
+                    </div>
+                    <div class="mb-3">
+                        <label for="marca" class="form-label">Descrição</label>
+                        <input type="text" class="form-control" id="descricao" name='descricao' value='{{portifolio.descricao}}'>
+                    </div>
+                    <div class="mb-3">
+                        <label for="imagem" class="form-label">Imagem</label>
+                        <input type="text" class="form-control" id="imagem" name='imagem' value='{{portifolio.imagem}}'>
+                    </div>
+                    <div class="mb-3">
+                        <label for="valor" class="form-label">Vídeo</label>
+                        <input type="text" class="form-control" id="video" name='video' value='{{portifolio.video}}'>
+                    </div>
+                    <div class="mb-3">
+                        <label for="valor" class="form-label">Autor</label>
+                        <input type="text" class="form-control" id="autor" name='autor' value='{{portifolio.autor}}'>
+                    </div>
+                    <button type="submit" href="/adm" class="btn btn-primary">Atualizar ✔️</button>
+                    <button href="/adm" class="btn btn-primary-cancel">Cancelar ❌</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+        integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
+        crossorigin="anonymous"></script>
+</body>
+</html>

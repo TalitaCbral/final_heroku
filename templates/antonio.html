@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./assets/css/style.css">
+    <!--Link para acessar os icones do site boxicons-->
+<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Blue Final Website</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .row {
+       
+        padding: 5rem 1rem;
+        background-image: url(https://previews.123rf.com/images/marchie/marchie1505/marchie150500028/40081640-seamless-pattern-background-fast-food-.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 100%;
+    }
+    .jumbotron{
+        background-image: url(https://media1.giphy.com/media/QYRD0UhXj0J1zFfEV8/giphy.gif);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 100%;
+        
+    }
+   .text-align-center{
+        text-align: center; 
+   }
+
+
+</style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/sobre">Antonio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/antonio">Antonio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/elisama">Elisama</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/fellipe">Fellipe </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="/rudhy">Rudhy</a>
+            </li>
+
+            <li class="nav-cfg">
+                <a class="nav-link" href="/adm">⚙️</a>
+            </li>
+        </ul>
+        </div>
+    </nav>
+    <section class="jumbotron text-center">
+        <div class="container">
+            <img src=>
+        <h1></h1>
+        <p class="lead text-muted"></p>
+        </div>
+    </section>
+    
+    <div class="album py-5 bg-light" id="Antonio">
+        <div class="Titulo text-center"><h2>Comidas</h2></div>
+        <div class="container">
+
+        <div class="row">
+            {% for p in portifolio %}
+            <div class="col-md-4">
+                
+                <div class="card mb-4 shadow-sm">
+                    <img class="card-img-top" 
+                    data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" 
+                    style="height: 225px; width: 100%; display: block;" 
+                    src="{{p.imagem}}" data-holder-rendered="true">
+                    <div class="card-body">
+                    <p class="card-text"><h3 class="text-align-center">{{p.nome}}</h3>{{p.descricao}}</p>
+
+                
+                    <div class="d-flex justify-content-between align-items-center">
+                        
+                        <div class="btn-group">
+                        <a href="/adm" id="config">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Editar</button>
+                        </a>
+                        
+                        </div>
+                        
+                    </div>
+                    </div>
+                </div>
+                
+            </div>
+            {% endfor %}
+        </div>
+</body>
+<footer class="blog-footer">
+    <p>Criado por &copy <a href="https://github.com/antonio00" target="_blanck">AML</a></p>
+    <p>
+        <a href="#">Voltar ao topo</a>
+    </p>
+</footer>
+</html>

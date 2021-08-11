@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/adm.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>Portifolio | ADM</title>
+</head>
+
+<body id="adm">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" href="/" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="/">🏠 Início</a>
+        <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+    <section id="msg">      
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class=flashes>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+    </section>  
+        <form action='/new' method="POST">
+        <h1>Cadastre um novo projeto</h1>
+       
+                <label for="nome">Nome</label>
+                <input type="text" placeholder="Nome do projeto" id="nome" name="nome" >
+
+                <label for="imagem">Imagem</label>
+                <input type="text" placeholder="Link da imagem" id="imagem" name="imagem" >
+
+                <label for="video">Video</label>
+                <input type="text" placeholder="Link do video" id="video" name="video" >
+
+                <label for="autor">Autor</label>
+                <input type="text" placeholder="Escolha:  Antonio / Elisama / Fellipe / Rudhy" id="autor" name="autor" required >
+
+                <label for="descricao">Descrição</label>
+                <textarea name="descricao" id="descricao" cols="30" rows="10"
+                    placeholder="Digite a descrição do projeto"></textarea>
+                
+                
+                <button type="submit">Adicionar</button>
+
+
+            </form>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOME</th>
+                    <th>IMAGEM</th>
+                    <th>VÍDEO</th>
+                    <th>AUTOR</th>
+                    <th>DESCRIÇÃO</th>
+                    <th>AÇÕES</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for p in portifolio %}
+                <tr>
+                    <td id="id" >{{p.id}}</td>
+                    <td id="nome" >{{p.nome}}</td>
+                    <td id="imagem" ><a href="{{p.imagem}}" target="_blank">{{p.imagem}}</a></td>
+                    <td id="video" ><a herf="{{p.video}}" target="_blank">{{p.video}}</a></td>
+                    <td id="autor" >{{p.autor}}</td>
+                    <td id="descricao" >{{p.descricao}}</td>
+                    <td id="acoes">
+                        <a id='editar' href="/edit/{{p.id}}">✏️Editar</a>
+                        <a id='apagar' href="/{{p.id}}">🗑️Apagar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+
+        <script src="../static/js/adm.js"></script>
+
+
+</body>
+
+</html>

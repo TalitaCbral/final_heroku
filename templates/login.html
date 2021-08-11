@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/login.css">
+
+    <title>Projeto FINAL</title>
+</head>
+
+<body>
+    <section id="login">
+        
+
+        <form action='/auth' method="POST">
+            <a href="/">
+                <i class="fa fa-home" aria-hidden="true"></i>
+            </a>
+
+            <div class="container">
+                <class class="card">
+                    <h1>Painel Administrativo ⚙️</h1>
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+        <ul class=flashes>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+
+                    <form method='POST' action='/adm'>
+                        
+                        <div class="label-float">
+                            <input type="password" id="senha" placeholder="" name="senha" required>
+                            <label for="usuario">Senha</label>
+                        </div>
+
+                        <div class="justify-center">
+                            <button>Entrar</button>
+                        </div>
+
+                        <div>
+                            <hr>
+                        </div>
+
+                    </form>
+                    <p>Entre com usuário e senha para acesser o Painel Administrativo.</p>
+                <class>
+
+
+            </div>
+            </div>
+
+    </section>
+    <script src="../static/js/script.js"></script>
+</body>
+
+</html>
